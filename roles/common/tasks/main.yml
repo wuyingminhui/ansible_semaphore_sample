@@ -1,0 +1,45 @@
+---
+# This task for create repo and install nessary components.
+
+# - name: create the repos if not exsits
+#   file: path=/data/src/ state=directory mode=0755
+
+- name: say hi to every one
+  shell: echo "123123" >> /home/jason.txt
+  sudo: yes
+  # with_items:
+  #   - java-1.8.0-openjdk
+  #   - java-1.8.0-openjdk-devel
+  #   - git
+  #   - curl-devel
+  #   - expat-devel
+  #   - gettext-devel
+  #   - openssl-devel
+  #   - zlib-devel
+  #   - gcc
+  #   - perl-ExtUtils-MakeMaker
+  #   - supervisor
+
+# - name: send private key to remote deploy user
+#   copy: src=~/.ssh/id_rsa dest={{ ssh_dir }}id_rsa mode=0600
+
+# - name: send public key to remote deploy user
+#   copy: src=~/.ssh/id_rsa.pub dest={{ ssh_dir }}id_rsa.pub mode=0600
+
+# - name: get the server code from git repos
+#   git: repo={{ git_repository }} dest=/data/src accept_hostkey=yes key_file=/root/.ssh/id_rsa force=yes version=master
+
+# - name: Download Gradle {{gradle_version}}
+#   get_url: dest=/data url=https://services.gradle.org/distributions/{{gradle_zipfile}}
+#   sudo: yes
+#   tags: [gradle]
+
+# - name: Extract Gradle
+#   shell: unzip "/data/{{gradle_zipfile}}" -d /usr/local/share/ creates=/usr/local/share/{{gradle_folder}}
+#   sudo: yes
+#   tags: [gradle]
+
+# - name: Add Gradle executable symlink to path
+#   shell: ln -s /usr/local/share/{{gradle_folder}}/bin/gradle /usr/local/bin/gradle creates=/usr/local/bin/gradle
+#   sudo: yes
+#   tags: [gradle]

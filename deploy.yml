@@ -1,0 +1,14 @@
+---
+# This playbook deploys web app and db server  
+
+- name: create repo folder and git pull the repos
+  hosts: jump_server
+  remote_user: root
+  roles:
+    - common
+
+- name: get gradle and build src
+  hosts: jump_server
+  remote_user: root
+  roles:
+    - server
